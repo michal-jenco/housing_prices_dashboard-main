@@ -16,6 +16,12 @@ What wasn't implemented:
   1. A graph to visualize valuable data
   2. Docker deployment (was able to successfuly build a docker package using the Dockerfile, however running it gave errors I wasn't able to solve. I still included the Dockerfile in the project to facilitate a possible discussion on what I did wrong there.
 
+Technologies used:
+  1. Python 3.9.13
+  2. FastAPI web framework with Jinja templates
+  3. TinyDB for the local single-file database
+  4. Javascript and AJAX for changing the website without refreshing/reloading
+
 What the app looks like on my end:
 
 ![image](https://user-images.githubusercontent.com/36048121/218333084-6e9c4f4b-def9-414f-acb4-37c4d2c2d3ba.png)

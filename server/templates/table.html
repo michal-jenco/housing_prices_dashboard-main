@@ -1,0 +1,29 @@
+Predicted price for this house is: {{last_prediction}}
+
+<h1>Previous predictions</h1>
+
+<div id="predictions_table_div">
+    <table id="predictions_table">
+    <tr>
+        <th>timestamp</th>
+        <th>longitude</th>
+        <th>latitude</th>
+        <th>housing_median_age</th>
+        <th>total_rooms</th>
+        <th>total_bedrooms</th>
+        <th>population</th>
+        <th>households</th>
+        <th>median_income</th>
+        <th>ocean_proximity</th>
+        <th>predicted_price</th>
+    </tr>
+
+    {% for prediction in previous_predictions %}
+    <tr>
+        {% for parameter in prediction %}
+            <td>{{ parameter }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+</div>

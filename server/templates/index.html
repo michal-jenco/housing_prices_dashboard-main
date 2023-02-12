@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <style>
+    table, th, td {
+        border:1px solid black;
+    }
+    </style>
+
+    <script>
+        function submitForm() {
+            var formElement = document.getElementById('myForm');
+            var data = new FormData(formElement);
+            fetch('/get_form_params', {
+                method: 'POST',
+                body: data,
+             })
+             .then(resp => resp.json())
+             .then(data => {
+               document.getElementById("responseArea").innerHTML = data;
+             })
+             .catch(error => {
+               console.error(error);
+             });
+
+             loadDoc('/update_table', display_prediction_and_table)
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("myForm").addEventListener("submit", function(e) {
+                e.preventDefault() // Cancel the default action
+                sendContactForm();
+            });
+        });
+
+        function loadDoc(url, cFunction) {
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    cFunction(this);
+                }
+            };
+
+            xhttp.open("GET", '/update_table', true);
+            xhttp.send();
+        }
+
+        function display_prediction_and_table(xhttp) {
+            document.getElementById("lastPrediction").innerHTML = xhttp.responseText;
+        }
+
+        loadDoc('/update_table', display_prediction_and_table)
+    </script>
+
+    <body>
+        <h1>House parameters</h1>
+        <form method="post" id="myForm" action="/get_form_params">
+            <label for="longitude">Longitude: </label><br>
+            <input id="longitude" name="longitude" value=""><br>
+
+            <label for="latitude">Latitude: </label><br>
+            <input  id="latitude" name="latitude" value=""><br>
+
+            <label for="housing_median_age">Housing median age: </label><br>
+            <input  id="housing_median_age" name="housing_median_age" value=""><br>
+
+            <label for="total_rooms">Total rooms: </label><br>
+            <input id="total_rooms" name="total_rooms" value=""><br>
+
+            <label for="total_bedrooms">Total bedrooms: </label><br>
+            <input  id="total_bedrooms" name="total_bedrooms" value=""><br>
+
+            <label for="population">Population: </label><br>
+            <input  id="population" name="population" value=""><br>
+
+            <label for="households">Households: </label><br>
+            <input  id="households" name="households" value=""><br>
+
+            <label for="median_income">Median income: </label><br>
+            <input  id="median_income" name="median_income" value=""><br>
+
+            <label for="ocean_proximity_dropdown">Ocean proximity: </label><br>
+            <select name="ocean_proximity" id="ocean_proximity_dropdown">
+                <option value="NEAR OCEAN">Near ocean</option>
+                <option value="NEAR Bay">Near bay</option>
+                <option value="INLAND">Inland</option>
+                <option value="ISLAND">Island</option>
+                <option value="<1H OCEAN">Under 1 hour from ocean</option>
+            </select><br><br>
+
+            <input class="submit" type="submit" value="Predict" onclick="submitForm()">
+        </form><br>
+
+    <div id="responseArea"></div>
+    <div id="lastPrediction"></div>
+
+    </body>
+</html>

@@ -2,7 +2,7 @@
 
 Instructions:
   1. Download this repository to any location in your PC
-  2. Run _install_venv.bat_ .. this will create a virtual environment for the project and install the required packages. This requires that you have Python 3 installed globally on your machine.
+  2. Run _install_venv.bat_ .. this will create a virtual environment for the project and install the required packages. This requires that you have Python 3 installed globally on your machine
   3. Run _start_server.bat_ to start the server. The chosen port is 5000, can be changed in the script in case you have port conflicts on your machine
   4. Go to "localhost:5000" in your web browser to see and interact with the application
 

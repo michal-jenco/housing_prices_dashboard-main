@@ -14,9 +14,9 @@ What was implemented:
 
 What wasn't implemented:
   1. A graph to visualize valuable data
-  2. Docker deployment (was able to successfuly build a docker package using the Dockerfile, however running it gave errors I wasn't able to solve
+  2. Docker deployment (was able to successfuly build a docker package using the Dockerfile, however running it gave errors I wasn't able to solve. I still included the Dockerfile in the project to facilitate a possible discussion on what I did wrong there.
 
-What it looks like on my end:
+What the app looks like on my end:
 
 ![image](https://user-images.githubusercontent.com/36048121/218333084-6e9c4f4b-def9-414f-acb4-37c4d2c2d3ba.png)
 

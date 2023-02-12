@@ -21,6 +21,7 @@
   2. FastAPI web framework with Jinja templates
   3. TinyDB for the local single-file database
   4. Javascript and AJAX for changing the website without refreshing/reloading
+  5. uvicorn as the web server
 
 **What the app looks like on my end:**
 

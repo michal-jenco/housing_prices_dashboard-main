@@ -20,3 +20,4 @@ What it looks like on my end:
 
 ![image](https://user-images.githubusercontent.com/36048121/218333084-6e9c4f4b-def9-414f-acb4-37c4d2c2d3ba.png)
 
+Developed on Windows 10 and tested on the current version of Chrome (Version 109.0.5414.120 (Official Build) (64-bit))
